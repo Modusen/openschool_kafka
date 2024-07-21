@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Metrics_consumer
+
+  datasource:
+    url: jdbc:postgresql://localhost:4867/myDb
+#    ${db.url}
+    username: myUser
+#    ${db.user}
+    password: 123
+#    ${db.password}
+
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+server:
+  port: 8084
